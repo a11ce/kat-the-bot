@@ -29,6 +29,14 @@ public class Word implements Serializable {
 	{
 		isLast = true;
 	}
+	public boolean getFirst()
+	{
+		return this.isFirst;
+	}
+	public boolean getLast()
+	{
+		return this.isLast;
+	}
 	public void addWord(String inWord)
 	{
 		inWord = inWord.trim().toLowerCase();
