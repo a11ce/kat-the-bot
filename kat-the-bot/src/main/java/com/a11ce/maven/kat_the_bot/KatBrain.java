@@ -65,6 +65,7 @@ public class KatBrain {
 			}
 		}
 		
+		System.out.println("TFL SIZE " + tempFirstList.size());
 		return tempFirstList.get(new Random().nextInt(tempFirstList.size())).getWord();		
 	}
 	

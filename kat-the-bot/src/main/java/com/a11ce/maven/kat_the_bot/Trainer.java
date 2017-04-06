@@ -17,8 +17,27 @@ public class Trainer {
 		this.trainSentence(in.split(" "));
 	}
 	
+	public void trainLong(String in) throws IOException
+	{
+		in = formatfix(in);
+		System.out.println(in);
+		String[] senList = in.split("[.]");
+		
+		System.out.println(senList[0]);
+		
+		for(int i=0; i < senList.length; i++)
+		{
+			System.out.println("Training: " + senList[i]);
+			trainSentence(senList[i]);
+		}
+	}
+	
 	public void trainSentence(String[] in) throws IOException
 	{
+		if(in.length < 2)
+		{
+			return;
+		}
 		for(int j = 0; j < in.length; j++)
 		{
 			in[j] = formatfix(in[j]);
@@ -41,6 +60,7 @@ public class Trainer {
 		return in.toLowerCase()
 				.replaceAll("[?!]", ".")
 				.replace("[_+-,@#$%^&*();\\/|<>\"']", "")
+				.replace("\n", "")
 				;
 	}
 }

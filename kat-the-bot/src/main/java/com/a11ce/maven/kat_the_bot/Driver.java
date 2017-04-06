@@ -1,6 +1,8 @@
 package com.a11ce.maven.kat_the_bot;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 
 public class Driver {
 	
@@ -15,7 +17,10 @@ public class Driver {
 		train = new Trainer(workDir);
 		gen = new Generator(workDir);
 		
-		train.trainSentence("Hi my name is kat");
+		String longString =  new String(Files.readAllBytes(Paths.get(  System.getProperty("user.dir")+ "/paris.txt")));
+		
+	//	train.trainLong(longString);
+		
 		System.out.println(gen.makeSent());
 		
 	}
