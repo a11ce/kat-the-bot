@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 
 public class Word implements Serializable {
-	private ArrayList<Association> assocs;
+	public ArrayList<Association> assocs;
 	private boolean isFirst;
 	private boolean isLast;
 	
@@ -18,6 +18,10 @@ public class Word implements Serializable {
 		isLast = false;
 	}
 	public String getWord()
+	{
+		return thisWord;
+	}
+	public String toString()
 	{
 		return thisWord;
 	}
